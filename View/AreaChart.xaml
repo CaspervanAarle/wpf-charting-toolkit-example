@@ -1,0 +1,24 @@
+﻿<Page x:Class="Visualization_I4_test.View.AreaChart"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Visualization_I4_test.View"
+      xmlns:chartingToolkit="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=DotNetProjects.DataVisualization.Toolkit"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="GraphChart">
+
+    <Grid Grid.Row="1">
+        <chartingToolkit:Chart 
+            Margin="0" 
+            Title="Area Chart Example" 
+            DataContext="{Binding Users}"
+            Background="AliceBlue">
+            <chartingToolkit:AreaSeries ItemsSource="{Binding}" 
+                                   DependentValuePath="Age" 
+                                   IndependentValuePath="UserId">
+            </chartingToolkit:AreaSeries>
+        </chartingToolkit:Chart>
+    </Grid>
+</Page>
